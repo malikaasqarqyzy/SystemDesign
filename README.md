@@ -9,9 +9,9 @@ Context: A shared dictionary passed between steps to store transaction data (e.g
 
 #Code Structure
 
-services.py: Contains the PaymentStep, InventoryStep, and ShippingStep classes.
-saga.py: Implements the SagaOrchestrator class.
-main.py: Demonstrates the workflow execution.
+- services.py: Contains the PaymentStep, InventoryStep, and ShippingStep classes.
+- saga.py: Implements the SagaOrchestrator class.
+- main.py: Demonstrates the workflow execution.
 
 #How It Works
 - Execution:
