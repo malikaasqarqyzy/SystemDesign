@@ -48,8 +48,3 @@ class ShippingStep:
         if shipping_id:
             print(f"Cancelling shipping {shipping_id}...")
             print("Shipping compensation completed!")
-
-"""class PaymentStep():
-    def execute(self, context):
-    print("Executing payment step...")
-    """
