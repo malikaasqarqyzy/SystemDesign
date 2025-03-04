@@ -1,0 +1,16 @@
+version: '3'
+services:
+  neo4j:
+    image: neo4j:5.12
+    environment:
+      NEO4J_AUTH: neo4j/studentportal
+      NEO4J_PLUGINS: '["apoc"]'
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4j_data:/data
+      - neo4j_import:/var/lib/neo4j/import
+volumes:
+  neo4j_data:
+  neo4j_import:

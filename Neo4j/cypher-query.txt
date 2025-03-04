@@ -1,0 +1,16 @@
+MATCH (c:Component)
+OPTIONAL MATCH (c)-[d:DEPENDS_ON]->()
+WITH c, COUNT(d) AS fan_out
+OPTIONAL MATCH ()-[d:DEPENDS_ON]->(c)
+WITH c, fan_out, COUNT(d) AS fan_in
+SET c.fan_in = fan_in,
+    c.fan_out = fan_out,
+    c.instability = CASE 
+      WHEN fan_in + fan_out = 0 THEN 0.0 
+      ELSE fan_out * 1.0 / (fan_in + fan_out) 
+    END
+RETURN c.name AS Component,
+       c.fan_in AS `Fan-in`,
+       c.fan_out AS `Fan-out`,
+       c.instability AS `Instability (I)`
+ORDER BY c.instability DESC;

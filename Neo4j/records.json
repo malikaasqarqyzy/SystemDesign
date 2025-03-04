@@ -1,0 +1,56 @@
+﻿[
+  {
+    "Component": "Frontend",
+    "Fan-in": 0,
+    "Fan-out": 1,
+    "Instability (I)": 1.0
+  },
+  {
+    "Component": "Messaging",
+    "Fan-in": 0,
+    "Fan-out": 1,
+    "Instability (I)": 1.0
+  },
+  {
+    "Component": "Analytics",
+    "Fan-in": 0,
+    "Fan-out": 2,
+    "Instability (I)": 1.0
+  },
+  {
+    "Component": "Monitoring",
+    "Fan-in": 0,
+    "Fan-out": 3,
+    "Instability (I)": 1.0
+  },
+  {
+    "Component": "API Gateway",
+    "Fan-in": 3,
+    "Fan-out": 3,
+    "Instability (I)": 0.5
+  },
+  {
+    "Component": "User Management",
+    "Fan-in": 3,
+    "Fan-out": 1,
+    "Instability (I)": 0.25
+  },
+  {
+    "Component": "Course Management",
+    "Fan-in": 3,
+    "Fan-out": 1,
+    "Instability (I)": 0.25
+  },
+  {
+    "Component": "Authentication",
+    "Fan-in": 1,
+    "Fan-out": 0,
+    "Instability (I)": 0.0
+  },
+  {
+    "Component": "File Storage",
+    "Fan-in": 2,
+    "Fan-out": 0,
+    "Instability (I)": 0.0
+  }
+]
