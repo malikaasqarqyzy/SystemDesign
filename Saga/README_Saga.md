@@ -23,6 +23,7 @@ If any step fails, the orchestrator triggers the compensate() method for all com
 A shared context dictionary is used to pass data (e.g., payment ID, reservation ID) between steps.
 
 #Design Overview
+
 This implementation models a Saga Pattern within a single microservice to manage the e-commerce checkout process. The workflow includes three sequential steps: Payment, Inventory Update, and Shipping. Each step supports a do action (to perform the operation) and a compensate action (to revert it if a subsequent step fails).
 
 #Key Components
@@ -36,10 +37,12 @@ This implementation models a Saga Pattern within a single microservice to manage
 - If any step fails, triggers compensation in reverse order of completion.
 
 #Workflow Logic
+
 Execution:
 - Steps run sequentially: Payment → Inventory → Shipping.
 - Successful steps are logged in executed_steps.
 
 Compensation:
 - If a step fails, the orchestrator runs compensate() on all completed steps in reverse order.
+
 Example: If Shipping fails, Inventory and Payment are compensated in that order.
