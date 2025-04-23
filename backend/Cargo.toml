@@ -1,0 +1,47 @@
+[package]
+name = "d-hads-backend"
+version = "0.1.0"
+edition = "2021"
+authors = ["D-HADS Team"]
+description = "Decentralized Humanitarian Aid Distribution System Backend"
+
+[dependencies]
+# Core
+tokio = { version = "1.28", features = ["full"] }
+axum = "0.6"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Database
+sled = "0.34"  # Embedded database for local storage
+couchdb = "2.0"  # For CouchDB integration when online
+
+# Cryptography and Security
+ring = "0.16"  # Cryptographic operations
+ed25519-dalek = "1.0"  # Digital signatures
+blake3 = "1.3"  # Fast cryptographic hashing
+zeroize = "1.5"  # Secure memory wiping
+
+# Networking
+libp2p = { version = "0.51", features = ["tcp-tokio", "mdns"] }
+async-trait = "0.1"
+
+# Biometrics
+imageproc = "0.23"  # Image processing for biometric data
+rustdct = "0.7"  # DCT transforms for biometric feature extraction
+
+# Blockchain
+substrate-api-client = "0.17"
+
+# Utilities
+tracing = "0.1"
+tracing-subscriber = "0.3"
+thiserror = "1.0"
+anyhow = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.3", features = ["v4", "serde"] }
+
+[dev-dependencies]
+tokio-test = "0.4"
+criterion = "0.4"
+mockall = "0.11" 
